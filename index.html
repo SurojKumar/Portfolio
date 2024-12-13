@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Suroj Kumar Mondal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="highlight" id="highlight"></div>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Suroj Kumar Mondal</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <img src="SUROJ_PHOTO.jpeg" alt="Profile Picture">
+        <p>I am Suroj Kumar Mondal, a passionate Web Developer and Electronics Engineer. With expertise in Java, SQL, and web technologies, like HTML, CSS, JavaScript; I aim to create efficient, user-friendly applications.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">C/C++</div>
+            <div class="skill-card">Java</div>
+            <div class="skill-card">SQL</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Calculator</h3>
+                <p>A simple calculator using html, css and javascript.</p>
+                <button class="b1" onclick="location.href='Calculator/index.html'">Click Here</button>
+            </div>
+            <div class="project-card">
+                <h3>Weather app</h3>
+                <p>A weather website built using html, css and javascript and openweather API</p>
+                <button class="b2" onclick="location.href='Weather/index (6).html'">Click Here</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <h2>Resume</h2>
+        <a href="#" download="Resume.pdf">Download My Resume</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form onsubmit="submitContactForm(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Suroj Kumar Mondal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const highlight = document.getElementById('highlight');
+
+        // Update the position of the highlight circle based on mouse movement
+        document.addEventListener('mousemove', (event) => {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            highlight.style.transform = `translate(${x - highlight.offsetWidth / 2}px, ${y - highlight.offsetHeight / 2}px)`;
+            highlight.style.opacity = '1'; // Fade in on mouse move
+        });
+
+        // Fade out the highlight when the mouse leaves the document
+        document.addEventListener('mouseleave', () => {
+            highlight.style.opacity = '0'; // Fade out when mouse leaves
+        });
+
+        // Keep the highlight visible when mouse is in the document
+        document.addEventListener('mouseenter', () => {
+            highlight.style.opacity = '1'; // Fade in when mouse enters
+        });
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+        }
+
+        // Slide-in Effect
+        const sections = document.querySelectorAll('section');
+        const options = {
+            threshold: 0.2
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+ /* Global Styles */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: #f5f5f5;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: #00adb5;
+}
+ul {
+    list-style: none;
+}
+
+/* Header Section */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00adb5;
+}
+nav ul {
+    display: flex;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a:hover {
+    color: #f5f5f5;
+}
+
+/* Section Styles */
+section {
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-in-out;
+}
+section.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00adb5;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #00adb5;
+}
+.about p {
+    max-width: 600px;
+    line-height: 1.8;
+}
+
+/* Skills Section */
+.skills {
+    background: #1f1f1f;
+    padding: 50px 20px;
+}
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.skill-card {
+    background: #2e2e2e;
+    padding: 20px;
+    border-radius: 50px;
+    text-align: center;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.8s;
+}
+.skill-card:hover {
+    transform: scale(1.1);
+    background-color: #008c97;
+
+}
+
+/* Projects Section */
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.project-card {
+    background: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.b1{
+    text-align: center;
+    height: 30px;
+    width: 80px;
+    margin-top: 48px;
+    border-radius: 50px;
+    border-color: white;
+    transition: 0.5s;
+}
+
+.b1:hover{
+    background-color: #008c97;
+    color: white;
+    border-color: #008c97;
+}
+
+.b2{
+    text-align: center;
+    height: 30px;
+    width: 80px;
+    margin-top: 30px;
+    border-radius: 50px;
+    border-color: white;
+    transition: 0.5s;
+}
+
+.b2:hover{
+    background-color: #008c97;
+    color: white;
+    border-color: #008c97;
+}
+/* Resume Section */
+.resume {
+    text-align: center;
+}
+.resume a {
+    background: #00adb5;
+    padding: 10px 20px;
+    color: #121212;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.8s;
+}
+.resume a:hover {
+    background: white;
+
+}
+
+/* Contact Section */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #2e2e2e;
+    color: #f5f5f5;
+}
+.contact form button {
+    background: #00adb5;
+    padding: 10px 20px;
+    border: none;
+    color: #121212;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #121212;
+    color: #888;
+}
+
+ 
+
+/* Highlight circle */
+.highlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: grey;
+    pointer-events: none;
+    transition: transform 0.1s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1;
+    mix-blend-mode: lighten;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
